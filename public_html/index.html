@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Tau Machete | Software Developer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+   /* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e2f;
+    padding: 10px 20px;
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #c8e6c9;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #1e1e2f;
+        width: 100%;
+        top: 50px;
+        left: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    h2 {
+      color: #1e1e2f;
+      margin-top: 40px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .skill-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .skill-card:hover {
+      transform: translateY(-5px);
+    }
+    .skill-icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+      color: #4a90e2;
+    }
+    footer {
+      background: #1e1e2f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    /* About Section */
+.about-section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      /* Adjust if necessary */
+    height: auto;
+      gap: 40px;
+    }
+
+    .content-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease;
+    }
+
+    .content-box:hover {
+      transform: scale(1.02);
+    }
+
+    .text-content {
+      flex: 1;
+      padding-right: 20px;
+    }
+
+    .text-content h2 {
+      margin: 0 0 10px;
+      color: lightskyblue;
+    }
+
+    .text-content p {
+      line-height: 1.6;
+      color: lightskyblue;
+    }
+
+    .image-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+   
+
+    .image-content img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+     
+  
+    .cta-button {
+      background-color: white;
+      color: #4f46e5;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+      background-color: #e0e7ff;
+    }
+.Home-body {
+      height: 100vh;
+      background: url('back_1.jpeg') ;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+      perspective: 1000px;
+    }
+
+    .card {
+      width: 380px;
+      height: 520px;
+      background: #1c1c1c;
+      border-radius: 20px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      transition: transform 0.1s ease;
+      transform-style: preserve-3d;
+      padding: 20px;
+      position: relative;
+    }
+
+    .card img {
+      width: 360px;
+      height: 360px;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 3px solid #00bcd4;
+      border-radius: 10px; /* Slight rounding, remove or set to 0 for sharp corners */
+    }
+
+    .card h1 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1.1em;
+      opacity: 0.9;
+      text-align: center;
+    }
+
+    .glow {
+      position: absolute;
+      width: 380px;
+      height: 520px;
+      border-radius: 20px;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.2), transparent 70%);
+      z-index: -1;
+      transform: translateZ(-1px);
+    }
+    /* Contact Section */
+.container-con {
+    max-width: 800px;
+    margin: 0 auto;
+  ;
+}
+#contact {
+    padding: 40px 20px;
+    border-radius: 0px;
+ 
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #e8f5e9;
+}
+
+button {
+    background-color:lightskyblue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: window;
+}
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+        <div class="logo">
+            <h3>Tau Ngoako Machete is Portfolio </h3>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#about-container">About Me</a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+    
+    
+    <section class="Home-body" id="home">
+     <div class="card" id="card">
+    <img src="Mypic1.jpeg" alt="Tau's Photo" />
+    <h1>Tau Ngoako Machete</h1>
+    <p>Software Developer | Full-Stack | Problem Solver | Creative Thinker</p>
+   
+    <a href="#projects">
+      <button class="cta-button">View My Work</button>
+    </a>
+    <div class="glow">
+      
+    </div>
+    
+  </div>
+   
+      
+  </section >
+     <section id="about-container" class="about-section">
+        <h1 style="color: lightskyblue; align-items: center;"> ABOUT ME</h1>
+    </section>
+  <section id="Skills">
+      <div class="container">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i class="fas fa-code skill-icon"></i>
+        <h3>Frontend</h3>
+        <p>HTML, CSS, JavaScript, React</p>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-server skill-icon"></i>
+        <h3>Backend</h3>
+        <p>Node.js, PHP, Kotlin, Java, C#</p>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-database skill-icon"></i>
+        <h3>Databases</h3>
+        <p>MySQL, PostGreSQL, Microsoft SQL Server, Oracle SQL Developer, Firebase</p>
+      </div>
+  <div class="skill-card">
+ <i class="fas fa-mobile-alt skill-icon"></i>
+    <h3>Mobile Apps</h3>
+    <p>Android Studio, React Native</p>
+  </div>
+  <div class="skill-card">
+    <i class="fas fa-desktop skill-icon"></i>
+    <h3>Desktop Apps</h3>
+    <p>JavaFX</p>
+  </div>
+      <div class="skill-card">
+        <i class="fas fa-laptop-code skill-icon"></i>
+        <h3>Tools & IDEs</h3>
+        <p>Netbeans, Visual Studio, VS Code, GitHub, Git, Figma, Azure</p>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-lightbulb skill-icon"></i>
+        <h3>Soft Skills</h3>
+        <p>Problem Solving, Creativity, Time Management</p>
+      </div>
+    </div>
+  </div>  
+    </section>
+    <section id="contact">
+          <div class="container-con">
+            <h2>Contact Us</h2>
+            <p>Email: <a href="mailto:ntau935@gmail.com">ntau935@gmail.com</a></p>
+            <form id="contact-form" method="post">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Your Address" required>
+                <input type="text" placeholder="Your Number" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Request</button>
+            </form>
+        </div>
+    </section>
+
+  <footer>
+    <p>© 2025 Tau Machete | Based in Johannesburg</p>
+  </footer>
+<script>
+    const contentData = [
+      {
+        title: "PROFESSIONAL SUMMARY",
+        text:" A recent graduate with an IIE Diploma in Information Technology, specializing ins Software Development from IIERosebank College (2023). Possesses a strong foundation in software development principles, with hands-on experience in programming, problem-solving, and software design. Proactively continues learning, demonstrating skills in adaptability, analytical thinking, and effective teamwork. Committed to delivering high-quality work while continually enhancing technical expertise to meet the evolving demands of the software industry.",
+        img: "Mypic1.jpeg"
+      },
+      {
+        title: "WORK EXPERIENCE",
+        text: " Java Programming Internship(Codsoft)  Sep 2024 – Oct 2024<br> Successfully completed a 31-day remote internship focused on Java programming. Delivered assigned tasks, including problem-solving exercises and the development of efficient Java-based solutions. Earned a certificate of completion in recognition of technical proficiency and commitment.",
+        img: "codsoft.jpeg"
+      },
+      {
+        title: "The SMLU Call Centre Training",
+        text: "Motivated and customer-focused individual with successful completion of The SMLU Call Centre Training Program. Gained hands-on experience and practical knowledge in effective communication, active listening, problem-solving, conflict resolution, and delivering excellent customer service in high-pressure environments. Developed strong interpersonal and telecommunication skills, with a keen understanding of call handling protocols, CRM systems, and service excellence standards. Prepared to contribute positively to any customer support or call centre environment with professionalism, adaptability, and a commitment to client satisfaction.",
+        img: "Smli.jpeg"
+      },
+      {
+        title: "Githup",
+        text: "I am a South African full-stack developer who uses GitHub to showcase his web development projects and community initiatives. His repositories include:<br>67BlanketsforMandelaDay – Community-focused project supporting Nelson Mandela Day.<br>Booking – A web-based clinic appointment booking system.<br>CODSOFT – Early-stage or placeholder repository.<br> Githup Link: https://github.com/Ntau935",
+        img: "Git.jpg"
+      }
+    ];
+
+    const container = document.getElementById("about-container");
+
+    contentData.forEach(item => {
+      const box = document.createElement("div");
+      box.className = "content-box";
+
+      box.innerHTML = `
+        <div class="text-content">
+          <h2>${item.title}</h2>
+          <p>${item.text}</p>
+        </div>
+        <div class="image-content">
+          <img src="${item.img}" alt="${item.title}">
+        </div>
+      `;
+
+      container.appendChild(box);
+    });
+  </script>
+ <script>
+    const card = document.getElementById('card');
+
+    document.addEventListener('mousemove', (e) => {
+      const { innerWidth: w, innerHeight: h } = window;
+      const x = (e.clientX / w - 0.5) * 30;
+      const y = (e.clientY / h - 0.5) * -30;
+
+      card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    });
+
+    document.addEventListener('mouseleave', () => {
+      card.style.transform = 'rotateY(0deg) rotateX(0deg)';
+    });
+  </script>
+     <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            
+        }
+        
+    </script>
+</body>
+</html>
